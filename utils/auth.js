@@ -8,7 +8,7 @@ const expiration = "1d";
 
 // Middleware to verify token
 export function authMiddleware(req, res, next) {
-  let token = req.body.token || req.query.token || req.headers.authorization;
+  let token = req.body?.token || req.query?.token || req.headers?.authorization;
 
   if (req.headers.authorization) {
     token = token.split(" ").pop().trim();
