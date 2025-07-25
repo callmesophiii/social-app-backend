@@ -4,9 +4,11 @@ import cors from "cors";
 import db from "./config/connection.js";
 import usersRouter from './routes/users.js'
 import postsRouter from './routes/posts.js'
+
 dotenv.config();
+
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = 3000;
 const PROD_URL = process.env.PROD_URL;
 
 const whitelist = ["http://localhost:3000", PROD_URL];
