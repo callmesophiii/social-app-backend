@@ -4,11 +4,14 @@ import cors from "cors";
 import db from "./config/connection.js";
 import usersRouter from './routes/users.js'
 import postsRouter from './routes/posts.js'
+import morgan from 'morgan';
 
 dotenv.config();
 
 const app = express();
 const PORT = 3000;
+
+app.use(morgan('dev'));
 const PROD_URL = process.env.PROD_URL;
 
 const whitelist = ["http://localhost:3000", PROD_URL];
