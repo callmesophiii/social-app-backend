@@ -27,7 +27,7 @@ app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use('/api/users', usersRouter)
-app.use('/api/feed', postsRouter)
+app.use('/api/posts', postsRouter)
 db.once("open", () => {
   app.listen(PORT, () => console.log(`:earth_africa: Now listening on localhost:${PORT}`));
 });
